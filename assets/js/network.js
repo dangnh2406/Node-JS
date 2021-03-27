@@ -2,6 +2,8 @@
 var http=require('http');
 
 var fs=require('fs');
+const { normalize } = require('node:path');
+
 
 http.createServer(function (require,reponse) {
     reponse.writeHead('200',{'Content-type':'text/html'});
@@ -33,4 +35,4 @@ http.createServer(function (require,reponse) {
         ///truy cap trang login
     }
 
-}).listen(8033);
+}).listen(process.env.PORT || '3000');
