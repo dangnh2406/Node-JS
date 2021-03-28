@@ -5,7 +5,7 @@
   "main": "network.js",
   "scripts": {
 
-    "start": "node ./assets/js/network.js"
+    "start": "node ../../src/views/login.html"
   },
   "repository": {
     "type": "git",

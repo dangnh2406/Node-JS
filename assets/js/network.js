@@ -1,35 +1,37 @@
 
-var http=require('http');
+var http = require('http');
 
-var fs=require('fs');
+const fs = require('fs');
 
 
-http.createServer(function (require,reponse) {
-    reponse.writeHead('200',{'Content-type':'text/html'});
-    var url=require.url;
-    
-    if (url=='/'){
+http.createServer(function (require, reponse) {
+    reponse.writeHead('200', { 'Content-type': 'text/html' });
+    var url = require.url;
+
+    if (url == '/') {
         //truy cap trang chu
-        fs.readFile('../../src/views/login.html',function (errol,data) {
-           if (!errol){
-               reponse.write(data);
-               reponse.end();
-           }
-           else {
-               reponse.end("404 not found");
-               console.log(url)
-           }
+        fs.readFile('../../src/views/login.html','utf-8', function (errol, data) {
+            if (!errol) {
+                reponse.write(data);
+                console.log(data)
+                reponse.end();
+            }
+            else {
+                console.log(url)
+                reponse.end("404 not found");
+
+            }
         })
     }
-    else if (url=='/insert'){
+    else if (url == '/insert') {
 
         ///truy cap trang login
     }
-    else if (url=='/show'){
+    else if (url == '/show') {
 
         ///truy cap trang login
     }
-    else if (url=='/delete'){
+    else if (url == '/delete') {
 
         ///truy cap trang login
     }
