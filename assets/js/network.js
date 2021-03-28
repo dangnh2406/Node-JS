@@ -2,7 +2,6 @@
 var http=require('http');
 
 var fs=require('fs');
-const { normalize } = require('node:path');
 
 
 http.createServer(function (require,reponse) {
